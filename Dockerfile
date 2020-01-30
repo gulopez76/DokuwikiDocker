@@ -1,6 +1,6 @@
 FROM debian:10
 LABEL MAINTAINER="Guillem <gulopez76@gmail.com>"
-EXPOSE 80
+EXPOSE 80 443
 USER root
 
 RUN apt-get update && \
