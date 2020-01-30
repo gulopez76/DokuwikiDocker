@@ -1,6 +1,8 @@
 FROM debian:10
-LABEL MAINTAINER="Guillem <gulopez76@gmail.com>"
+LABEL MAINTAINER="Guillem Ulldemolins López <gulopez76@gmail.com>"
+
 EXPOSE 80 443
+
 USER root
 
 RUN apt-get update && \
@@ -12,6 +14,7 @@ COPY dokuwiki-stable.tgz /var/www/html/
 RUN tar xvf /var/www/html/dokuwiki-stable.tgz -C /var/www/html/
 
 RUN mv /var/www/html/dokuwiki-2018-04-22b/* /var/www/html/
+
 RUN mv /var/www/html/dokuwiki-2018-04-22b/.ht* /var/www/html/
 
 RUN chown -R www-data:www-data /var/www/html/*
